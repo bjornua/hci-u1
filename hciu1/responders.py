@@ -1,8 +1,6 @@
 # -*- coding: utf-8 -*-
-
 from werkzeug import Response, redirect
-from hciu1.utils import expose, local
-
+from hciu1.utils import expose, local, db
 
 @expose(["GET"], ["/", "/index"])
 def index():
@@ -13,7 +11,6 @@ def index():
 def shop():
     response = Response("this is webshop!!")
     return response
-
     
 def notfound():
     response = Response("not found")

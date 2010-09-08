@@ -1,9 +1,9 @@
 # -*- coding: utf-8 -*-
-
 from werkzeug import Local, LocalManager
 from werkzeug.routing import Map, Rule
 from os.path import dirname
-
+from hciu1.config import config
+import couchdb
 root_path = dirname(__file__)
 
 local = Local()
@@ -18,3 +18,4 @@ def expose(methods, rules, **kw):
         return f
     return decorate
 
+db = couchdb.Database(config["couchdb_url"])
