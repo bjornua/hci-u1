@@ -22,14 +22,11 @@ class Application(object):
         try:
             local.url_adapter = url_adapter = url_map.bind_to_environ(environ)
             local.request = Request(environ)
-#            local.session = session = Session()
             try:
                 endpoint, params = url_adapter.match()
                 response = getattr(responders,endpoint)(**params)
             except NotFound:
                 response = notfound()
-#            session.set_cookie(response)
-#            session.save_session()
         except:
             if self.debug:
                 raise
