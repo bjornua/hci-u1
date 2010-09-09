@@ -4,7 +4,7 @@ from hciu1.utils import expose, local, db, template_response
 
 @expose(["GET"], ["/", "/index"])
 def index():
-    template_response("/test.mako")
+    template_response("/template.mako")
 
 @expose(["GET"], ["/shop"])
 def shop():

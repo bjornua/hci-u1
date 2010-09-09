@@ -1,0 +1,79 @@
+body, div {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    background: lightgray;
+    height: 100%;
+    width:100%;
+}
+
+#main {
+    width: 900px;
+    margin-left: auto;
+    margin-right: auto;
+    background: white;
+}
+
+#top_banner {
+    width:900px;
+    border-bottom:1px solid #000;
+    margin:10px 0 10px 0;
+    padding-bottom:10px;
+    height:100px;
+    background: #366;
+    font-size: 45px;
+    text-align: center;
+    vertical-align: middle;
+    font-weight: bold;
+    color: white;
+    /*padding-right: 25px;*/
+}
+
+#dagger {
+    font-size: 80px;
+}
+
+#left_menu {
+    float: left;
+    height: 410px;
+    width:180px;
+    margin-right: 10px;
+    background: orange;
+}
+
+#right_menu {
+    float: left;
+    height: 410px;;
+    width:180px;
+    background: lightblue;
+    margin-left: 10px;
+}
+
+#bottom_banner {
+    clear: both;
+    float: bottom;
+    background: #CC9933;
+    width:100%;
+    border-top:1px solid #000;
+    margin:10px 0 30px 0;
+    height:100px;
+}
+
+#content {
+    height: 400px;
+    background: white;
+    float:left;
+    padding: 5px;
+    width: 510px;
+    margin-bottom: 10px;
+}
+
+
+
+
+
+
+
+
