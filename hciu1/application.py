@@ -1,5 +1,6 @@
 # -*- coding: utf-8 -*-
 from hciu1.utils import local, url_map
+from hciu1.lib.session import Session
 from werkzeug import Request, Response
 from werkzeug.exceptions import NotFound
 
@@ -17,24 +18,35 @@ class Application(object):
         )
     
     def dispatch(self, environ, start_response):
-        from hciu1 import responders
-        notfound = responders.notfound
         try:
-            local.url_adapter = url_adapter = url_map.bind_to_environ(environ)
+            from hciu1 import responders
             local.request = Request(environ)
+            local.response = Response()
+            local.session = Session(local.request.cookies.get("session"))
             try:
-                endpoint, params = url_adapter.match()
-                response = getattr(responders,endpoint)(**params)
-            except NotFound:
-                response = notfound()
-        except:
-            if self.debug:
-                raise
-            else:
+                notfound = responders.notfound
+                local.url_adapter = url_adapter = url_map.bind_to_environ(environ)
+                try:
+                    endpoint, params = url_adapter.match()
+                except NotFound:
+                    notfound()
+                else:
+                    getattr(responders,endpoint)(**params)
+                response = local.response
+            except:
+                if self.debug:
+                    raise
                 try:
                     response = responders.error()
                 except:
-                    response = Response("Fejlsidens fejlside.")
+                    raise
+            local.session.save()
+            local.session.set_cookie(response)
+        except:
+            if self.debug:
+                raise
+            response = Response("Fejlsidens fejlside.")
+            
         return response(environ, start_response)        
     def __call__(self, environ, start_response):
         local.application = self

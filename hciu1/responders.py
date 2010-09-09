@@ -1,21 +1,17 @@
 # -*- coding: utf-8 -*-
 from werkzeug import Response, redirect
-from hciu1.utils import expose, local, db
+from hciu1.utils import expose, local, db, template_response
 
 @expose(["GET"], ["/", "/index"])
 def index():
-    response = Response("Hello world")
-    return response
+    template_response("/test.mako")
 
 @expose(["GET"], ["/shop"])
 def shop():
-    response = Response("this is webshop!!")
-    return response
+    local.response = Response("this is webshop!!")
     
 def notfound():
-    response = Response("not found")
-    return response
+    local.response = Response("not found")
 
 def error():
-    response = Response("error")
-    return response
+    local.response = Response("error")
