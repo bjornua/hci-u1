@@ -34,9 +34,10 @@ def get_files(directory="."):
 views = []
 for file in get_files(directory="views"):
     content = open(file).read()
-    designdoc = os.path.split(os.path.split(file)[0])[1]
-    viewname = os.path.split(file)[1][:-3]
-    views += [(designdoc, viewname, content)]
+    designdoc = os.path.split(os.path.split(os.path.split(file)[0])[0])[1]
+    viewname = os.path.split(os.path.split(file)[0])[1]
+    type = os.path.split(file)[1][:-3]
+    views += [(designdoc, type, viewname, content)]
 views.sort()
 
 docs = []
@@ -48,12 +49,14 @@ for designdoc, views in groupby(views, lambda val: val[0]):
         exists = False
     else:
         exists = True
-    
     doc["_id"] = "_design/" + designdoc
     doc["language"] = "javascript"
     doc["views"] = {}
-    for designdoc, viewname, content in views:
-        doc["views"][viewname] = {"map": content}
+    for designdoc, type, viewname, content in views:
+        if not viewname in doc["views"]:
+            doc["views"][viewname] = {}
+        doc["views"][viewname].update({type: content})
     
     if not exists or db[doc["_id"]] != doc:
+        print "Updating", designdoc + ",", viewname + ",", type
         db[doc["_id"]] = doc
