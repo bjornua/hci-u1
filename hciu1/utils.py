@@ -20,7 +20,7 @@ def expose(methods, rules, **kw):
     return decorate
 
 def db():
-    return couchdb.Database(config["couchdb_url"])
+    return couchdb.Server(config["couchdb_server_url"])[config["couchdb_db"]]
 
 template_lookup = TemplateLookup(
     directories=[join(root_path, "templates")],

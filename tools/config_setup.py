@@ -28,7 +28,8 @@ def prompt_update_config():
         config = config()
 
     for name, key, converter in [
-        ("CouchDB URL", "couchdb_url" , str),
+        ("CouchDB Server URL", "couchdb_server_url", str),
+        ("CouchDB db", "couchdb_db", str),
     ]:
         config[key] = user_query(name, converter, config[key])
     return config
