@@ -32,17 +32,14 @@ class Application(object):
                     notfound()
                 else:
                     getattr(responders,endpoint)(**params)
-                response = local.response
             except:
                 if self.debug:
                     raise
-                try:
-                    response = responders.error()
-                except:
-                    raise
+                responders.error()
+            response = local.response
             local.session.save()
-            local.session.set_cookie(response)
-        except:
+            local.session.set_cookie(local.response)
+        except: 
             if self.debug:
                 raise
             response = Response("Fejlsidens fejlside.")

@@ -4,14 +4,19 @@ from hciu1.utils import expose, local, db, template_response
 
 @expose(["GET"], ["/", "/index"])
 def index():
-    template_response("/template.mako")
+    template_response("/page/index.mako")
 
 @expose(["GET"], ["/shop"])
 def shop():
-    local.response = Response("this is webshop!!")
+    template_response("/page/shop_index.mako")
+
+@expose(["GET"], ["/medlem"])
+def new_member():
+    template_response("/page/member_new.mako")
     
 def notfound():
-    local.response = Response("not found")
+    template_response("/page/error/notfound.mako")
 
 def error():
-    local.response = Response("error")
+    template_response("/page/error/error.mako")
+
