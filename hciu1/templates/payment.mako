@@ -15,10 +15,11 @@ total_price = total_price.replace(".",",")
 total_price = total_price + " kr."
     
 %>
-<h1>Bekræft betaling</h1>
+<h1>Bekræft bestilling</h1>
 <p>Bekræft venligst at du ønsker at betale <strong>${total_price}</strong> for 
 ${order_count} stk. ${product_name}.
 
 <form action="${url_for("pay", method="POST")}" method="POST">
-    <input type="submit" value="Bekræft betaling!">
+    <input type="submit" value="Bekræft bestilling!">
+    <input type="hidden" name="total_price" value=${esc_attr(total_price)}>
 </form>
