@@ -4,7 +4,7 @@
     <h3>Køb billet</h3>
     <table style="width:150px">
         <tr>
-            <td>Pr. stk.:</td><td>7,20 kr.</td>
+            <td>Pr. stk.:</td><td>2,70 kr.</td>
         </tr><tr>
             <td style="width:60px;">Antal:</td><td><input id="order_count" name="order_count" style="width:100%;" type="text" value="1" size="2" /></td>
         </tr><tr>
