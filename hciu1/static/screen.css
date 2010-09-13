@@ -31,6 +31,11 @@ body {
     /*padding-right: 25px;*/
 }
 
+#top_banner a {
+    color: white;
+    text-decoration: none;
+}
+
 #dagger {
     font-size: 80px;
 }
@@ -69,6 +74,68 @@ body {
     width: 510px;
     margin-bottom: 10px;
 }
+
+#content h1 {
+    font-size: 18px;
+}
+
+#content h2 {
+    font-size: 14px;
+}
+
+#content p {
+    font-size: 14px;
+}
+
+#content div {
+    padding: 2px 5px 2px 5px;   
+    margin: 4px 0 2px 0;
+    height: 110px;
+}
+
+#content a#bronze_link, #content a#silver_link, #content a#gold_link {
+    text-decoration: none;
+    color: black;
+}
+
+#content div#bronze {
+    background: #a94013;
+}
+#content div#silver {
+    background: #a4a4a4;
+}
+#content div#gold {
+    background: #d4a017;
+}
+
+dl {
+    clear:both;
+}
+
+dt {
+    float:left; 
+    text-align:right;
+    width:100px;
+    line-height:25px;
+    margin:0 10px 10px 0;
+    font-size: 14px;
+}
+
+dd {
+    float:left;
+    width:auto;
+    line-height:25px;
+    margin:0 0 10px 0;
+}
+
+input#name, input#address, input#postal_code, input#city, input#phone {
+    width:200px;
+}
+
+/*input [type=text] {
+    width: 200px;
+}*/
+
 
 
 
