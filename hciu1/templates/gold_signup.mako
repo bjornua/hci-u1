@@ -23,6 +23,10 @@
     <dd><input name="phone" type="text" /></dd>
     </dl>
     <dl>
+    <dt><label for="mail">E-mail</label></dt>
+    <dd><input name="mail" type="text" /></dd>
+    </dl>
+    <dl>
     <dt></dt>
     <dd><input name="submit" type="submit" value="Tilmeld" /></dd>
     </dl>
