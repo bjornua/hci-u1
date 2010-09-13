@@ -6,7 +6,7 @@ body, div {
 body {
     background: lightgray;
     height: 100%;
-    width:100%;
+    width: 100%;
 }
 
 #main {
@@ -17,11 +17,11 @@ body {
 }
 
 #top_banner {
-    width:900px;
-    border-bottom:1px solid #000;
-    margin:10px 0 10px 0;
-    padding-bottom:10px;
-    height:100px;
+    width: 900px;
+    border-bottom: 1px solid #000;
+    margin: 10px 0 10px 0;
+    padding-bottom: 10px;
+    height: 100px;
     background: #366;
     font-size: 45px;
     text-align: center;
@@ -43,34 +43,34 @@ body {
 #left_menu, #right_menu {
     float: left;
     height: 600px;
-    width:170px;
+    width: 170px;
     padding: 5px;
 }
 
 #left_menu {
-    margin-right: 10px;
-    background: orange;
+    margin-right: 15px;
+    background: #FFCC66;
 }
 
 #right_menu {
     background: lightblue;
-    margin-left: 10px;
+    margin-left: 15px;
 }
 
 #bottom_banner {
     clear: both;
     float: bottom;
     background: #CC9933;
-    width:100%;
-    border-top:1px solid #000;
-    margin:10px 0 30px 0;
-    height:100px;
+    width: 100%;
+    border-top: 1px solid #000;
+    margin: 10px 0 200px 0;
+    height: 35px;
 }
 
 #content {
     height: 600px;
     background: white;
-    float:left;
+    float: left;
     padding: 5px;
     width: 510px;
     margin-bottom: 10px;
@@ -80,11 +80,7 @@ body {
     font-size: 18px;
 }
 
-#content h2 {
-    font-size: 14px;
-}
-
-#content p {
+#content h2, #content p {
     font-size: 14px;
 }
 
@@ -110,34 +106,27 @@ body {
 }
 
 dl {
-    clear:both;
+    clear: both;
+}
+
+dt, dd {
+    float: left;
+    line-height: 25px;
 }
 
 dt {
-    float:left; 
     text-align:right;
-    width:100px;
-    line-height:25px;
-    margin:0 10px 10px 0;
+    width: 100px;
+    margin: 0 10px 10px 0;
     font-size: 14px;
 }
 
 dd {
-    float:left;
-    width:auto;
-    line-height:25px;
-    margin:0 0 10px 0;
+    width: auto;
+    margin: 0 0 10px 0;
 }
 
-input#name, input#address, input#postal_code, input#city, input#phone {
-    width:200px;
 }
-
-/*input [type=text] {
-    width: 200px;
-}*/
-
-
 
 
 
