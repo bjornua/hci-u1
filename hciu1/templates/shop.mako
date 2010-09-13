@@ -1,8 +1,8 @@
 <%inherit file="/xhtml11.mako"/>
 <h1>Vareoversigt</h1>
 <p>Vælg en kategori for at se vareoversigten.</p>
-<ul>
-<li><a href="">Alle</a></li>
+<ul id="categories">
+<li><a href="${url_for("concerts")}">Alle</a></li>
 <li><a href="${url_for("concerts")}">Koncerter</a></li>
 <li><a href="">Hjælpemidler</a></li>
 <li><a href="">Kommunikation</a></li>
