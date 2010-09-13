@@ -40,18 +40,19 @@ body {
     font-size: 80px;
 }
 
-#left_menu {
+#left_menu, #right_menu {
     float: left;
-    height: 410px;
-    width:180px;
+    height: 600px;
+    width:170px;
+    padding: 5px;
+}
+
+#left_menu {
     margin-right: 10px;
     background: orange;
 }
 
 #right_menu {
-    float: left;
-    height: 410px;;
-    width:180px;
     background: lightblue;
     margin-left: 10px;
 }
@@ -67,7 +68,7 @@ body {
 }
 
 #content {
-    height: 400px;
+    height: 600px;
     background: white;
     float:left;
     padding: 5px;
@@ -90,7 +91,7 @@ body {
 #content div {
     padding: 2px 5px 2px 5px;   
     margin: 4px 0 2px 0;
-    height: 110px;
+    height: 140px;
 }
 
 #content a#bronze_link, #content a#silver_link, #content a#gold_link {
