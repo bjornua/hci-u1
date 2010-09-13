@@ -52,7 +52,8 @@ def signup_complete():
     template_response("/signup_complete.mako")
     
 def notfound():
-    local.response = Response("not found")
+    template_response("/page/error/notfound.mako")
 
 def error():
-    local.response = Response("error")
+    template_response("/page/error/error.mako")
+

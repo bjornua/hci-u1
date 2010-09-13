@@ -3,7 +3,7 @@ from os.path import dirname, join
 from werkzeug import Local, LocalManager
 from werkzeug.routing import Map, Rule
 import couchdb
-#from hciu1.config import config
+from hciu1.config import config
 from mako.lookup import TemplateLookup
 
 root_path = dirname(__file__)
