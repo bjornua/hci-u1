@@ -8,6 +8,7 @@
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
     <title>HCI - U1</title>
     <link media="screen" rel="stylesheet" type="text/css" href="/static/screen.css"/>
+    <script type="text/javascript" src="/static/jquery-1.4.2.min.js"></script>
 </head>
 <body>
 <div id="main">

@@ -22,14 +22,24 @@ def brahms():
 def schubert():
     template_response("/schubert.mako")
 
-@expose(["GET"], ["/shop/kurv/<int:id>"])
-def basket(id):
+@expose(["POST"], ["/shop/betaling/<int:product_id>"])
+def payment(product_id):
     response = Response()
-    #id = local.request.form.get("id", 1)
-    template_response("/basket.mako", response,
-        id = id
+    order_count = local.request.form.get("order_count", 1)
+    try:
+        order_count = int(order_count)
+        if order_count < 1:
+            raise ValueError
+    except ValueError:
+        order_count = 1
+    
+    template_response("/payment.mako",
+        product_id = product_id,
+        order_count = order_count,
     )
-    return response
+@expose(["POST"], ["/pay"])
+def pay():
+    template_response("/pay.mako")
 
 @expose(["GET"], ["/signup"])
 def signup():
