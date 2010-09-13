@@ -39,7 +39,8 @@ def payment(product_id):
     )
 @expose(["POST"], ["/pay"])
 def pay():
-    template_response("/pay.mako")
+    total_price = local.request.form.get("total_price", "Hovsa")
+    template_response("/pay.mako", total_price = total_price)
 
 @expose(["GET"], ["/signup"])
 def signup():
