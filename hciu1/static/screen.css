@@ -1,3 +1,7 @@
+html {
+    overflow-y: scroll;
+}
+
 body, div {
     margin: 0;
     padding: 0;
