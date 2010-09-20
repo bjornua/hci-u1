@@ -12,12 +12,20 @@
 </head>
 <body>
 <div id="main">
-<div id="top_banner"><a href="${url_for("index")}">Pensionist <span id="dagger">&dagger;</span> Sagen</a></div>
-<div id="left_menu"><ul id="left_menu"><li><a href="${url_for("signup")}">Klik her for at blive medlem</a></li></ul></div>
+<div id="top_banner"><a href="${url_for("index")}">Pensionist<!--span id="dagger">&dagger;</span-->Sagen</a></div>
+<div id="left_menu">
+    <ul id="left_menu">
+        <li><a href="${url_for("signup")}">Klik her for at blive medlem</a></li>
+        <li><a href="${url_for("shop")}">Klik her for at komme til webbutikken</a></li>
+    </ul>
+</div>
 <div id="content">
     ${next.body()}
 </div>
-<div id="right_menu"><ul id="right_menu"><li><a href="${url_for("shop")}">Klik her for at komme til webbutikken</a></li></ul></div>
+<div id="_right_menu">
+    <ul id="_right_menu">
+    </ul>
+</div>
 
 <div id="bottom_banner"><center>&copy; PensionistSagen 2010 - Tlf.: +45 1234 5678</center></div>
 </div>

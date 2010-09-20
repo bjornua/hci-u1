@@ -28,13 +28,13 @@ body {
     vertical-align: middle;
     font-weight: bold;
     color: white;
-    /*padding-right: 25px;*/
 }
 
 #top_banner a {
     color: white;
     text-decoration: none;
     display: block;
+    line-height: 120px;
 }
 
 #dagger {
@@ -43,9 +43,9 @@ body {
 
 #left_menu, #right_menu {
     float: left;
-    height: 600px;
     width: 170px;
     padding: 5px;
+    margin-bottom: 10px;
 }
 
 #left_menu {
@@ -72,11 +72,10 @@ body {
 }
 
 #content {
-    height: 600px;
     background: white;
     float: left;
     padding: 5px;
-    width: 510px;
+    width: 680px;
     margin-bottom: 10px;
 }
 
@@ -148,7 +147,6 @@ ul#categories a, ul#categories a:visited, ul#shop_items a, ul#shop_items a:visit
     padding: 2px 5px 2px 5px;
     margin: 5px 0 5px 0;
     display: block;
-    /*width: 180px;*/
     border: 1px solid black;
 }
 
@@ -163,6 +161,7 @@ ul#left_menu a, ul#left_menu a:visited, ul#right_menu a, ul#right_menu a:visited
     background: #e0e0e0;
     display: block;
     margin-top: 10px;
+    margin-bottom: 10px;
     padding: 2px;
     font-family: verdana;
     line-height: 22px;
@@ -179,4 +178,8 @@ ul#right_menu a, ul#right_menu a:visited {
 
 ul#left_menu a:hover, ul#right_menu a:hover {
     background: #ccc;
+}
+
+ul#left_menu {
+    margin-bottom: 20px;
 }
