@@ -1,10 +1,14 @@
 <%inherit file="/xhtml11.mako"/>
-<h1>Die Forelle (Schubert) af Hostrup Musik</h1>
-<form action="${url_for("payment", product_id=2, method="POST")}" style="padding:0px 10px; border:1px dashed #000; margin:0 auto; width:150px; float:right;" method="POST">
+<%
+    price_kr = price / 100
+    price_string = ("%.2f" % price_kr).replace(".",",") + " kr."
+%>
+<h1>${title}</h1>
+<form action="${url_for("payment", id=id, method="POST")}" style="padding:0px 10px; border:1px dashed #000; margin:0 auto; width:150px; float:right;" method="POST">
     <h3>Køb billet</h3>
     <table style="width:150px">
         <tr>
-            <td>Pr. stk.:</td><td>7,20 kr.</td>
+            <td>Pr. stk.:</td><td>${price_string}</td>
         </tr><tr>
             <td style="width:60px;">Antal:</td><td><input id="order_count" name="order_count" style="width:100%;" type="text" value="1" size="2" /></td>
         </tr><tr>
@@ -14,11 +18,13 @@
         </tr>
     </table>
 </form>
-<p>Koncerten er i Horsens i November 2010</p>
-<p>Medlemspris: 7,2 kr. (normalpris 8 kr.)</p>
+%if date != None:
+<p>Dato:  ${date}</p>
+%endif
+<p>Medlemspris: ??? kr. (normalpris ${price_string})</p>
 <script type="text/javascript">
     function update_price(){
-        total_price = $("#order_count").val() * 7.2;
+        total_price = $("#order_count").val() * ${str(price_kr)};
         if(isNaN(total_price)){return};
         total_price = total_price.toFixed(2);
         total_price = String(total_price);
